@@ -15,6 +15,7 @@ body {
   border-radius: 38px;
   color: white;
   background: linear-gradient(0deg, #272727, #272727);
+  cursor: pointer;
 }
 
 .myButton:before, .myButton:after {
@@ -102,8 +103,13 @@ body {
   z-index: 9998;
 }
 
-.starterPage{
-  
+.starterPage {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+
+.starterPage.fade-out {
+  opacity: 0;
 }
 
 button:hover ~ .custom-cursor,
