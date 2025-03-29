@@ -1,5 +1,5 @@
 import HeaderText from "@/Components/HeaderText";
-import Image from "next/image";
+import ImageGrid from "@/Components/ImageGrid";
 
 export default function Home() {
   return (
@@ -18,6 +18,7 @@ export default function Home() {
             </div>
           </div>
         </div>
+        <ImageGrid />
       </div>
     </div>
   );
