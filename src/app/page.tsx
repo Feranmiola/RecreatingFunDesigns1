@@ -1,11 +1,16 @@
 "use client";
 import HeaderText from "@/Components/HeaderText";
 import ImageGrid from "@/Components/ImageGrid";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 2000);
+  }, []);
   if (isLoading) {
     return (
       <div className="flex w-full h-screen starterPage bg-[#2F2F2F] items-center justify-center">
