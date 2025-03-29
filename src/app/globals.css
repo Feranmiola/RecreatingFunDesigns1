@@ -9,3 +9,39 @@ body {
 .font-poppins {
   font-family: 'Poppins', sans-serif;
 }
+
+.myButton {
+  position: relative;
+  border-radius: 38px;
+  color: white;
+  background: linear-gradient(0deg, #272727, #272727);
+}
+
+.myButton:before, .myButton:after {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: -2px;
+  background: linear-gradient(45deg, 
+    #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 1000%;
+  width: calc(100% + 4px);
+  border-radius: 38px;
+  height: calc(100% + 4px);
+  z-index: -1;
+  animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -400% 0;
+  }
+}
+
+.myButton:after {
+  filter: blur(50px);
+}
