@@ -5,7 +5,19 @@ export default function Home() {
   return (
     <div className="w-full h-screen">
       <div className="w-full flex items-center justify-center h-full space-x-10">
-        <HeaderText />
+        <div className="flex flex-col space-y-8">
+          <HeaderText />
+          <div className="flex flex-col space-y-5">
+            <p className="font-poppins font-light text-2xl max-w-[440px] text-white ">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus
+              in libero risus semper habitant arcu eget. Et integer facilisi
+              eget.
+            </p>
+            <div className="flex items-center justify-center w-max px-12 py-4 bg-white rounded-[36px] text-[#232323] text-2xl">
+              Explore
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
