@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 export default function CustomCursor() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
   const [isActive, setIsActive] = useState(false);
+  const [isHovering, setIsHovering] = useState(false);
   let timeout: NodeJS.Timeout;
 
   useEffect(() => {
@@ -12,19 +13,46 @@ export default function CustomCursor() {
       setIsActive(true);
 
       clearTimeout(timeout);
-
       timeout = setTimeout(() => {
         setIsActive(false);
       }, 2000);
     };
 
+    const handleMouseOver = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName.toLowerCase() === "button" ||
+        target.tagName.toLowerCase() === "a" ||
+        target.classList.contains("myButton")
+      ) {
+        setIsHovering(true);
+      }
+    };
+
+    const handleMouseOut = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (
+        target.tagName.toLowerCase() === "button" ||
+        target.tagName.toLowerCase() === "a" ||
+        target.classList.contains("myButton")
+      ) {
+        setIsHovering(false);
+      }
+    };
+
     window.addEventListener("mousemove", updatePosition);
+    document.addEventListener("mouseover", handleMouseOver);
+    document.addEventListener("mouseout", handleMouseOut);
 
     return () => {
       window.removeEventListener("mousemove", updatePosition);
+      document.removeEventListener("mouseover", handleMouseOver);
+      document.removeEventListener("mouseout", handleMouseOut);
       clearTimeout(timeout);
     };
   }, []);
+
+  if (isHovering) return null;
 
   return (
     <>

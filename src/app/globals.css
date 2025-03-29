@@ -65,7 +65,6 @@ body {
   transition: color 0.3s ease;
 }
 
-
 .custom-cursor {
   mix-blend-mode: difference;
   pointer-events: none;
@@ -91,7 +90,6 @@ body {
   z-index: 9999;
 }
 
-
 .cursor-highlight {
   position: fixed;
   width: 100px;
@@ -106,13 +104,19 @@ body {
 
 button:hover ~ .custom-cursor,
 .myButton:hover ~ .custom-cursor,
-a:hover ~ .custom-cursor,
-button:hover .custom-cursor,
-.myButton:hover .custom-cursor,
-a:hover .custom-cursor {
+a:hover ~ .custom-cursor {
   opacity: 0 !important;
-  background: transparent !important;
-  display: hidden !important;
+  visibility: hidden !important;
+}
+
+button:hover .cursor-ring,
+button:hover .cursor-highlight,
+.myButton:hover .cursor-ring,
+.myButton:hover .cursor-highlight,
+a:hover .cursor-ring,
+a:hover .cursor-highlight {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }
 
 
