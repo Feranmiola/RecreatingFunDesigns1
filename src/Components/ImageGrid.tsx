@@ -2,12 +2,25 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import Image1 from "./Images/Image1";
+import Image2 from "./Images/Image2";
+import Image3 from "./Images/Image3";
+import Image4 from "./Images/Image4";
+import Image5 from "./Images/Image5";
+import Image6 from "./Images/Image6";
+import Image7 from "./Images/Image7";
+import Image8 from "./Images/Image8";
+import Image9 from "./Images/Image9";
+import Image10 from "./Images/Image10";
+import Image11 from "./Images/Image11";
+import Image12 from "./Images/Image12";
+import Image13 from "./Images/Image13";
+import Image14 from "./Images/Image14";
+import Image15 from "./Images/Image15";
+import Image16 from "./Images/Image16";
+
+// ... Add your other image imports here ...
 
 const ImageGrid = () => {
-  const imageRefs = Array(16)
-    .fill(0)
-    .map(() => React.useRef(null));
-
   return (
     <div
       style={{
@@ -16,16 +29,45 @@ const ImageGrid = () => {
         gap: "0.5rem",
       }}
     >
-      {Array(16)
-        .fill(0)
-        .map((_, index) => (
-          <ImageCard key={index} index={index} />
-        ))}
+      <ImageCard />
     </div>
   );
 };
 
-const ImageCard = ({ index }: { index: number }) => {
+const ImageCard = () => {
+  const images = [
+    Image1,
+    Image2,
+    Image3,
+    Image4,
+    Image5,
+    Image6,
+    Image7,
+    Image8,
+    Image9,
+    Image10,
+    Image11,
+    Image12,
+    Image13,
+    Image14,
+    Image15,
+    Image16,
+  ];
+
+  return (
+    <>
+      {images.map((ImageComponent, index) => (
+        <IndividualCard key={index} ImageComponent={ImageComponent} />
+      ))}
+    </>
+  );
+};
+
+const IndividualCard = ({
+  ImageComponent,
+}: {
+  ImageComponent: React.ComponentType;
+}) => {
   const [rotateX, setRotateX] = useState(0);
   const [rotateY, setRotateY] = useState(0);
 
@@ -62,8 +104,8 @@ const ImageCard = ({ index }: { index: number }) => {
       drag
       dragConstraints={{ left: 0, right: 0, top: 0, bottom: 0 }}
       dragElastic={0.5}
-      dragTransition={{ bounceStiffness: 600, bounceDamping: 20 }}
-      whileDrag={{ scale: 1.1, zIndex: 1 }}
+      dragTransition={{ bounceStiffness: 400, bounceDamping: 20 }}
+      whileDrag={{ scale: 0.9, zIndex: 1 }}
       transition={{
         type: "spring",
         stiffness: 700,
@@ -74,7 +116,7 @@ const ImageCard = ({ index }: { index: number }) => {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <Image1 />
+      <ImageComponent />
     </motion.div>
   );
 };
