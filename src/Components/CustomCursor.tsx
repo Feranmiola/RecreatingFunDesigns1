@@ -23,7 +23,9 @@ export default function CustomCursor() {
       if (
         target.tagName.toLowerCase() === "button" ||
         target.tagName.toLowerCase() === "a" ||
-        target.classList.contains("myButton")
+        target.classList.contains("myButton") ||
+        target.classList.contains("starterPage") ||
+        target.closest(".starterPage")
       ) {
         setIsHovering(true);
       }
@@ -34,7 +36,9 @@ export default function CustomCursor() {
       if (
         target.tagName.toLowerCase() === "button" ||
         target.tagName.toLowerCase() === "a" ||
-        target.classList.contains("myButton")
+        target.classList.contains("myButton") ||
+        target.classList.contains("starterPage") ||
+        target.closest(".starterPage")
       ) {
         setIsHovering(false);
       }
