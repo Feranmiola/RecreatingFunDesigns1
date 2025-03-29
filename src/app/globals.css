@@ -45,3 +45,22 @@ body {
 .myButton:after {
   filter: blur(50px);
 }
+
+.gradient-text-hover {
+  position: relative;
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: color 0.3s ease;
+}
+
+.gradient-text-hover:hover {
+  color: transparent !important;
+  background: linear-gradient(45deg, 
+    #fb0094, #0000ff, #00ff00, #ffff00, #ff0000, #fb0094, 
+    #0000ff, #00ff00, #ffff00, #ff0000);
+  background-size: 1000%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: steam 20s linear infinite;
+  transition: color 0.3s ease;
+}
