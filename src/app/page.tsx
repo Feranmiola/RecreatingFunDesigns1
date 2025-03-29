@@ -13,9 +13,9 @@ export default function Home() {
               in libero risus semper habitant arcu eget. Et integer facilisi
               eget.
             </p>
-            <div className="flex items-center cursor-pointer myButton hover:bg-transparent hover:text-white hover:scale-110 border-1 border-transparent hover:border-white transition ease-in-out justify-center w-max px-12 py-4 bg-white rounded-[36px] text-[#232323] text-2xl">
+            <button className="flex items-center cursor-pointer myButton hover:bg-transparent hover:text-white hover:scale-110 border-1 border-transparent hover:border-white transition ease-in-out justify-center w-max px-12 py-4 bg-white rounded-[36px] text-[#232323] text-2xl">
               Explore
-            </div>
+            </button>
           </div>
         </div>
         <ImageGrid />
